@@ -10,8 +10,18 @@
   import NotFound from './pages/NotFound.svelte';
 
   import { activePage } from './stores/uiStore.js';
+  import { onMount } from 'svelte';
+  import { playerStore } from './stores/playerStore.js';
+  import { tournamentStore } from './stores/tournamentStore.js';
+  import { matchStore } from './stores/matchStore.js';
 
-  
+  onMount(() => {
+    // Load initial persistent data on app launch
+    playerStore.load();
+    tournamentStore.load();
+    matchStore.load();
+  });
+
 </script>
 
 <div class="app-layout">
