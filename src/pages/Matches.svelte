@@ -5,6 +5,10 @@
   import { selectedTournamentId, activePage, toast } from '../stores/uiStore.js';
   import { matchService } from '../services/matchService.js';
 
+
+import { shufflePlayers } from '../utils/shufflePlayers.js';
+import MatchTable from '../components/matches/MatchTable.svelte';
+
   // Default to selected tournament or first available tournament
   $: activeId = $selectedTournamentId || ($tournamentStore[0] ? $tournamentStore[0].id : null);
   $: currentTournament = $tournamentStore.find((t) => t.id === activeId);

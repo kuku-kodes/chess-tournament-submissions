@@ -1,6 +1,8 @@
 <script>
   import PlayerForm from '../components/players/PlayerForm.svelte';
   import { playerStore } from '../stores/playerStore.js';
+  // Common component import kiya
+  import Button from '../components/common/Button.svelte';
 </script>
 
 <div class="players-page">
@@ -29,13 +31,14 @@
                 <h4>{player.name}</h4>
                 <span class="player-meta">{player.country} • Elo: <strong>{player.rating}</strong></span>
               </div>
-              <button 
-                class="btn-delete" 
+              
+              <!-- Custom button ki jagah common Button component ka use -->
+              <Button 
+                variant="danger" 
                 on:click={() => playerStore.delete(player.id)}
-                title="Delete Player"
               >
-                ✕
-              </button>
+                ✕ Delete
+              </Button>
             </div>
           {/each}
         </div>
@@ -106,21 +109,6 @@
   .player-meta {
     font-size: 0.875rem;
     color: var(--color-text-muted, #94a3b8);
-  }
-
-  .btn-delete {
-    background: transparent;
-    border: none;
-    color: #ef4444;
-    cursor: pointer;
-    font-size: 1rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-    transition: background 0.2s;
-  }
-
-  .btn-delete:hover {
-    background: rgba(239, 68, 68, 0.1);
   }
 
   @media (max-width: 768px) {

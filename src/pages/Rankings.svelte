@@ -2,7 +2,12 @@
   import { tournamentStore } from '../stores/tournamentStore.js';
   import { selectedTournamentId } from '../stores/uiStore.js';
   import { rankingService } from '../services/rankingService.js';
+  import { calculateRankings } from '../utils/rankingCalculator.js';
+  import RankingTable from '../components/rankings/RankingTable.svelte';
+  import Podium from '../components/rankings/Podium.svelte';
+  import WinnerCard from '../components/rankings/WinnerCard.svelte';
 
+ 
   $: activeId = $selectedTournamentId || ($tournamentStore[0] ? $tournamentStore[0].id : null);
   $: currentTournament = $tournamentStore.find((t) => t.id === activeId);
   $: rankings = activeId ? rankingService.getTournamentRankings(activeId) : [];

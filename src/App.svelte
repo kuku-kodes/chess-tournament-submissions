@@ -16,6 +16,10 @@
   import AssignPlayersModal from './components/tournaments/AssignPlayersModal.svelte';
 
   import { activePage, activeModal, toast } from './stores/uiStore.js';
+  import Button from './components/common/Button.svelte';
+  import Input from './components/common/Input.svelte';
+  import Modal from './components/common/Modal.svelte';
+  import Loader from './components/common/Loader.svelte';
 </script>
 
 <div class="app-layout">
