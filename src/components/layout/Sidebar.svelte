@@ -43,6 +43,9 @@
     <a href="/players" use:link class="nav-item" class:active={$activePage === 'players'} on:click={() => activePage.set('players')}>
       <span class="icon">👥</span> Players
     </a>
+     <a href="/rankings" use:link class="nav-item" class:active={$activePage === 'rankings'} on:click={() => activePage.set('rankings')}>
+      <span class="icon">👥</span> Rankings
+    </a>
   </nav>
 </aside>
 

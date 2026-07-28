@@ -1,43 +1,459 @@
-# Svelte + Vite
+# ♟️ Chess Tournament Management System
 
-This template should help get you started developing with Svelte in Vite.
+A modern and responsive **Chess Tournament Management System** built with **Svelte + JavaScript**, designed to simplify tournament organization by providing player management, tournament management, automated match generation, and ranking calculation.
 
-## Recommended IDE Setup
+This project demonstrates clean architecture, modular component design, reusable code, and efficient state management while following modern frontend development practices.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+---
 
-## Need an official Svelte framework?
+# 📸 Application Screenshots
 
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
+> **Note:** Replace the placeholders below with actual screenshots after completing the project.
 
-## Technical considerations
+---
 
-**Why use this over SvelteKit?**
+## 🏠 Dashboard
 
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
+Displays an overview of the application, quick statistics, and navigation to different modules.
 
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
+<p align="center">
+  <img src="./screenshots/dashboard.png" alt="Dashboard" width="900">
+</p>
 
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
+---
 
-**Why include `.vscode/extensions.json`?**
+## 👤 Player Management
 
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
+Create, view, update, and delete player information.
 
-**Why enable `checkJs` in the JS template?**
+<p align="center">
+  <img src="./screenshots/players.png" alt="Player Management" width="900">
+</p>
 
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
+---
 
-**Why is HMR not preserving my local component state?**
+## 🏆 Tournament Management
 
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
+Manage tournaments and register players.
 
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
+<p align="center">
+  <img src="./screenshots/tournaments.png" alt="Tournament Management" width="900">
+</p>
 
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
+---
+
+## ➕ Add Players to Tournament
+
+Assign registered players to a selected tournament.
+
+<p align="center">
+  <img src="./screenshots/add-players.png" alt="Add Players" width="900">
+</p>
+
+---
+
+## ♟️ Match Generation
+
+Automatically generate random player pairings and match results.
+
+<p align="center">
+  <img src="./screenshots/matches.png" alt="Match Generation" width="900">
+</p>
+
+---
+
+## 🥇 Tournament Rankings
+
+Displays the final leaderboard with the top-ranked players.
+
+<p align="center">
+  <img src="./screenshots/rankings.png" alt="Tournament Rankings" width="900">
+</p>
+
+---
+
+## 📱 Responsive Design
+
+Desktop, Tablet, and Mobile views.
+
+<p align="center">
+  <img src="./screenshots/responsive.png" alt="Responsive Design" width="900">
+</p>
+
+---
+
+## 🎥 Demo
+
+> Add a demo GIF or screen recording here.
+
+<p align="center">
+  <img src="./screenshots/demo.gif" alt="Application Demo" width="900">
+</p>
+
+## 🚀 Features
+
+### 👤 Player Management
+- Create new players
+- View all registered players
+- Update player information
+- Delete players
+- Search and manage player records
+
+---
+
+### 🏆 Tournament Management
+- Create tournaments
+- Update tournament details
+- Delete tournaments
+- Register players into tournaments
+- View tournament information
+
+---
+
+### ♟️ Match Generation
+- Randomly pair tournament players
+- Automatically generate matches
+- Randomly determine winners (assignment requirement)
+- Save match history
+
+---
+
+### 🥇 Rankings
+- Calculate tournament rankings
+- Display Top 3 Players
+- Show complete leaderboard
+- Rank players based on match victories
+
+---
+
+## 🏗️ Project Architecture
+
 ```
+                     Chess Tournament Management
+                                  │
+      ┌───────────────────────────┼───────────────────────────┐
+      │                           │                           │
+  Player Module            Tournament Module            Match Module
+      │                           │                           │
+      └──────────────┬────────────┴─────────────┬─────────────┘
+                     │                          │
+              Ranking System             Local Storage
+```
+
+---
+
+# 📂 Project Structure
+
+```
+chess-tournament-management
+│
+├── public/
+│
+├── src/
+│   │
+│   ├── assets/
+│   │
+│   ├── components/
+│   │   ├── common/
+│   │   ├── layout/
+│   │   ├── players/
+│   │   ├── tournaments/
+│   │   ├── matches/
+│   │   └── rankings/
+│   │
+│   ├── pages/
+│   │   ├── Dashboard.svelte
+│   │   ├── Players.svelte
+│   │   ├── Tournaments.svelte
+│   │   ├── Matches.svelte
+│   │   └── Rankings.svelte
+│   │
+│   ├── services/
+│   │
+│   ├── stores/
+│   │
+│   ├── utils/
+│   │
+│   ├── App.svelte
+│   └── main.js
+│
+├── package.json
+├── vite.config.js
+├── README.md
+└── .gitignore
+```
+
+---
+
+# 🛠️ Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| **Svelte** | Frontend Framework |
+| **JavaScript (ES6+)** | Application Logic |
+| **Vite** | Build Tool |
+| **Svelte Stores** | State Management |
+| **CSS3** | Styling |
+| **Local Storage** | Data Persistence |
+
+---
+
+# 🎯 Application Workflow
+
+```
+Dashboard
+     │
+     ▼
+Create Players
+     │
+     ▼
+Create Tournament
+     │
+     ▼
+Register Players
+     │
+     ▼
+Generate Random Matches
+     │
+     ▼
+Store Match Results
+     │
+     ▼
+Calculate Rankings
+     │
+     ▼
+Display Top 3 Players
+```
+
+---
+
+# 💡 Design Principles
+
+This project was developed following modern frontend engineering principles:
+
+- Component-Based Architecture
+- Reusable UI Components
+- Single Responsibility Principle (SRP)
+- Separation of Concerns
+- DRY (Don't Repeat Yourself)
+- Modular Folder Structure
+- Clean Code Practices
+
+---
+
+# 📦 Core Modules
+
+## 👤 Player Module
+
+Responsible for:
+
+- Registering players
+- Updating player information
+- Deleting players
+- Listing all registered players
+
+---
+
+## 🏆 Tournament Module
+
+Responsible for:
+
+- Creating tournaments
+- Editing tournaments
+- Deleting tournaments
+- Managing tournament details
+- Registering players
+
+---
+
+## ♟️ Match Module
+
+Responsible for:
+
+- Random player pairing
+- Match generation
+- Winner selection
+- Match history
+
+---
+
+## 🥇 Ranking Module
+
+Responsible for:
+
+- Calculating player rankings
+- Displaying Top 3 winners
+- Leaderboard generation
+
+---
+
+# 📊 Data Models
+
+### Player
+
+```javascript
+{
+  id,
+  name,
+  email,
+  age,
+  city,
+  rating
+}
+```
+
+### Tournament
+
+```javascript
+{
+  id,
+  name,
+  location,
+  startDate,
+  endDate,
+  players:[]
+}
+```
+
+### Match
+
+```javascript
+{
+  id,
+  tournamentId,
+  playerOne,
+  playerTwo,
+  winner,
+  playedAt
+}
+```
+
+---
+
+# ⚙️ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/your-username/chess-tournament-management.git
+```
+
+Navigate to the project
+
+```bash
+cd chess-tournament-management
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run development server
+
+```bash
+npm run dev
+```
+
+Build production version
+
+```bash
+npm run build
+```
+
+Preview production build
+
+```bash
+npm run preview
+```
+
+---
+
+# 🧪 Features Demonstrated
+
+- CRUD Operations
+- Component Reusability
+- State Management
+- Random Match Algorithm
+- Ranking Algorithm
+- Responsive UI
+- Local Data Persistence
+- Modular Architecture
+
+---
+
+# 🎨 Future Enhancements
+
+- Swiss Tournament Format
+- Round Robin Tournament
+- Single Elimination
+- Double Elimination
+- Player Ratings (ELO)
+- Authentication & Authorization
+- Dark Mode
+- Tournament Analytics
+- PDF Export
+- Search & Filtering
+- Cloud Database Integration
+
+---
+
+# 📚 Learning Outcomes
+
+This project helped strengthen my understanding of:
+
+- Svelte Fundamentals
+- Component-Based Development
+- State Management using Svelte Stores
+- JavaScript ES6+
+- Frontend Architecture
+- Application Design
+- Modular Code Organization
+- CRUD Operations
+- Business Logic Implementation
+- Responsive Web Development
+
+---
+
+# 📸 Screenshots
+
+> Add screenshots after completing the project.
+
+- Dashboard
+- Players
+- Tournament Management
+- Match Generation
+- Rankings
+
+---
+
+# 🤝 Contributing
+
+Contributions, feature requests, and suggestions are welcome.
+
+Feel free to fork the repository and create a pull request.
+
+---
+
+# 👨‍💻 Author
+
+**Kaushlendra Kumar Verma**
+
+- 💼 Full Stack Developer
+- ⚙️ Go Backend Developer
+- 🤖 AI & Agentic AI Enthusiast
+
+GitHub: https://github.com/kuku-kodes
+
+---
+
+# ⭐ If you like this project
+
+Please consider giving it a ⭐ on GitHub.
+
+---
+
+## 📄 License
+
+This project was developed for educational purposes and technical assessment.
