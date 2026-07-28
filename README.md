@@ -17,7 +17,7 @@ This project demonstrates clean architecture, modular component design, reusable
 Displays an overview of the application, quick statistics, and navigation to different modules.
 
 <p align="center">
-  <img src="./screenshots/dashboard.png" alt="Dashboard" width="900">
+  <img src="./src/assets/Screenshot 2026-07-29 at 1.34.39 AM.png" alt="Dashboard" width="900">
 </p>
 
 ---
@@ -27,7 +27,7 @@ Displays an overview of the application, quick statistics, and navigation to dif
 Create, view, update, and delete player information.
 
 <p align="center">
-  <img src="./screenshots/players.png" alt="Player Management" width="900">
+  <img src="./src/assets/Screenshot 2026-07-29 at 1.36.14 AM.png" alt="Player Management" width="900">
 </p>
 
 ---
@@ -37,7 +37,7 @@ Create, view, update, and delete player information.
 Manage tournaments and register players.
 
 <p align="center">
-  <img src="./screenshots/tournaments.png" alt="Tournament Management" width="900">
+  <img src="./src/assets/Screenshot 2026-07-29 at 1.34.50 AM.png" alt="Tournament Management" width="900">
 </p>
 
 ---
@@ -47,7 +47,7 @@ Manage tournaments and register players.
 Assign registered players to a selected tournament.
 
 <p align="center">
-  <img src="./screenshots/add-players.png" alt="Add Players" width="900">
+  <img src="./src/assets/Screenshot 2026-07-29 at 1.48.05 AM.png" alt="Add Players" width="900">
 </p>
 
 ---
@@ -57,7 +57,7 @@ Assign registered players to a selected tournament.
 Automatically generate random player pairings and match results.
 
 <p align="center">
-  <img src="./screenshots/matches.png" alt="Match Generation" width="900">
+  <img src="./src/assets/Screenshot 2026-07-29 at 1.36.41 AM.png" alt="Match Generation" width="900">
 </p>
 
 ---
@@ -67,7 +67,7 @@ Automatically generate random player pairings and match results.
 Displays the final leaderboard with the top-ranked players.
 
 <p align="center">
-  <img src="./screenshots/rankings.png" alt="Tournament Rankings" width="900">
+  <img src="./src/assets/Screenshot 2026-07-29 at 1.35.57 AM.png" alt="Tournament Rankings" width="900">
 </p>
 
 ---
@@ -77,18 +77,10 @@ Displays the final leaderboard with the top-ranked players.
 Desktop, Tablet, and Mobile views.
 
 <p align="center">
-  <img src="./screenshots/responsive.png" alt="Responsive Design" width="900">
+  <img src="./src/assets/Screenshot 2026-07-29 at 1.35.08 AM.png" alt="Responsive Design" width="900">
 </p>
 
 ---
-
-## 🎥 Demo
-
-> Add a demo GIF or screen recording here.
-
-<p align="center">
-  <img src="./screenshots/demo.gif" alt="Application Demo" width="900">
-</p>
 
 ## 🚀 Features
 
