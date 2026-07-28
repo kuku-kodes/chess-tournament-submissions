@@ -72,6 +72,7 @@ export const matchService = {
    * Randomly selects a winner between the two players in a match.
    */
   simulateWinner(matchId) {
+    
     const allMatches = this.getAll();
     const matchIndex = allMatches.findIndex((m) => m.id === matchId);
     if (matchIndex === -1) return null;

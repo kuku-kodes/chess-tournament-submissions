@@ -3,7 +3,9 @@ import { matchService } from '../services/matchService.js';
 import { tournamentStore } from './tournamentStore.js';
 
 function createMatchStore() {
-  const { subscribe, set, update } = writable([]);
+ 
+  const initialMatches = typeof window !== 'undefined' ? matchService.getAll() : [];
+  const { subscribe, set, update } = writable(initialMatches);
 
   return {
     subscribe,
@@ -39,9 +41,11 @@ function createMatchStore() {
     simulateWinner(matchId) {
       const updatedMatch = matchService.simulateWinner(matchId);
       if (updatedMatch) {
-        update((matches) =>
-          matches.map((m) => (m.id === matchId ? updatedMatch : m))
-        );
+        update((matches) => {
+         const newMatches = matches.map((m) => (m.id === matchId ? updatedMatch : m))
+
+         return [...newMatches];
+      });
       }
       return updatedMatch;
     },

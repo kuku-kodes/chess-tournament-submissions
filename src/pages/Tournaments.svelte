@@ -7,7 +7,7 @@
   // Common components aur validators import kiye
   import Button from '../components/common/Button.svelte';
   import Input from '../components/common/Input.svelte';
-  import Modal from '../components/common/Modal.svelte';
+  import Modal from '../components/common/Model.svelte';
   import { validateTournament } from '../utils/validators.js';
 
   let title = '';

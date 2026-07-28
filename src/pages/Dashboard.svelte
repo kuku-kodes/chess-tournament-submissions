@@ -19,37 +19,45 @@
 
   <!-- Metric Statistics Grid -->
   <div class="stats-grid">
-    <div class="stat-card" on:click={() => activePage.set('players')} role="button" tabindex="0">
+    <button type="button" class="stat-card" on:click={() => activePage.set('players')}>
       <div class="stat-icon">♟️</div>
       <div class="stat-info">
         <h3>Total Players</h3>
         <p class="stat-value">{totalPlayers}</p>
       </div>
-    </div>
+    </button>
 
-    <div class="stat-card" on:click={() => activePage.set('tournaments')} role="button" tabindex="0">
+    <button type="button" class="stat-card" on:click={() => activePage.set('tournaments')}>
       <div class="stat-icon">🏆</div>
       <div class="stat-info">
         <h3>Tournaments</h3>
         <p class="stat-value">{totalTournaments}</p>
       </div>
-    </div>
+    </button>
 
-    <div class="stat-card" on:click={() => activePage.set('tournaments')} role="button" tabindex="0">
+    <button type="button" class="stat-card" on:click={() => activePage.set('tournaments')}>
       <div class="stat-icon">⚡</div>
       <div class="stat-info">
         <h3>Active Tournaments</h3>
         <p class="stat-value">{activeTournaments}</p>
       </div>
-    </div>
+    </button>
 
-    <div class="stat-card" on:click={() => activePage.set('matches')} role="button" tabindex="0">
+     <button type="button" class="stat-card" on:click={() => activePage.set('tournaments')}>
+      <div class="stat-icon">⚡</div>
+      <div class="stat-info">
+        <h3>Completed Tournaments</h3>
+        <p class="stat-value">{completedTournaments}</p>
+      </div>
+    </button>
+
+    <button type="button" class="stat-card" on:click={() => activePage.set('matches')}>
       <div class="stat-icon">⚔️</div>
       <div class="stat-info">
         <h3>Total Matches</h3>
         <p class="stat-value">{totalMatches}</p>
       </div>
-    </div>
+    </button>
   </div>
 
   <!-- Quick Actions Section -->
@@ -116,6 +124,8 @@
     gap: 1rem;
     cursor: pointer;
     transition: transform 0.2s, border-color 0.2s;
+    text-align: left;
+    color: inherit;
   }
 
   .stat-card:hover {

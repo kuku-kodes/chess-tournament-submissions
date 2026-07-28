@@ -1,25 +1,15 @@
 <script>
+  import Router from 'svelte-spa-router';
   import Navbar from './components/layout/Navbar.svelte';
   import Sidebar from './components/layout/Sidebar.svelte';
   import Footer from './components/layout/Footer.svelte';
-
-  // Pages
-  import Dashboard from './pages/Dashboard.svelte';
-  import Players from './pages/Players.svelte';
-  import Tournaments from './pages/Tournaments.svelte';
-  import Matches from './pages/Matches.svelte';
-  import Rankings from './pages/Rankings.svelte';
-  import NotFound from './pages/NotFound.svelte';
+  import { routes } from './routes/index.js';
 
   // Modals & Notifications
   import DeletePlayerModal from './components/players/DeletePlayerModal.svelte';
   import AssignPlayersModal from './components/tournaments/AssignPlayersModal.svelte';
 
-  import { activePage, activeModal, toast } from './stores/uiStore.js';
-  import Button from './components/common/Button.svelte';
-  import Input from './components/common/Input.svelte';
-  import Modal from './components/common/Modal.svelte';
-  import Loader from './components/common/Loader.svelte';
+  import { activeModal, toast } from './stores/uiStore.js';
 </script>
 
 <div class="app-layout">
@@ -29,19 +19,10 @@
     <Sidebar />
     
     <main class="main-content">
-      {#if $activePage === 'dashboard'}
-        <Dashboard />
-      {:else if $activePage === 'players'}
-        <Players />
-      {:else if $activePage === 'tournaments'}
-        <Tournaments />
-      {:else if $activePage === 'matches'}
-        <Matches />
-      {:else if $activePage === 'rankings'}
-        <Rankings />
-      {:else}
-        <NotFound />
-      {/if}
+      <div class="min-h-screen bg-gray-900 text-white p-4">
+        <!-- Sirf Router rahega, baki purane if-else hata diye hain -->
+        <Router {routes} />
+      </div>
     </main>
   </div>
 
@@ -84,7 +65,6 @@
 
   .main-content {
     flex: 1;
-    padding: 2rem;
     overflow-y: auto;
     background-color: #0f172a;
   }
@@ -125,7 +105,7 @@
 
   @media (max-width: 768px) {
     .main-content {
-      padding: 1rem;
+      padding: 0;
     }
   }
 </style>

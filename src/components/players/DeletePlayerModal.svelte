@@ -11,6 +11,12 @@
     activeModal.set({ type: null, data: null });
   }
 
+  function handleKeydown(event) {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  }
+
   function confirmDelete() {
     if (targetPlayer && targetPlayer.id) {
       playerStore.delete(targetPlayer.id);
@@ -20,7 +26,7 @@
   }
 </script>
 
-<div class="modal-backdrop" role="dialog" aria-modal="true" on:click|self={closeModal}>
+<div class="modal-backdrop" role="dialog" aria-modal="true" tabindex="-1" on:keydown={handleKeydown} on:click|self={closeModal}>
   <div class="modal-content">
     <div class="modal-header">
       <h3>Confirm Deletion</h3>

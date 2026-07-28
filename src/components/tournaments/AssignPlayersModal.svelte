@@ -17,6 +17,12 @@
     activeModal.set({ type: null, data: null });
   }
 
+  function handleKeydown(event) {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  }
+
   function togglePlayerSelection(playerId) {
     if (selectedPlayerIds.includes(playerId)) {
       selectedPlayerIds = selectedPlayerIds.filter(id => id !== playerId);
@@ -34,7 +40,7 @@
   }
 </script>
 
-<div class="modal-backdrop" role="dialog" aria-modal="true" on:click|self={closeModal}>
+<div class="modal-backdrop" role="dialog" aria-modal="true" tabindex="-1" on:keydown={handleKeydown} on:click|self={closeModal}>
   <div class="modal-content">
     <div class="modal-header">
       <h3>Assign Players to "{targetTournament?.title}"</h3>

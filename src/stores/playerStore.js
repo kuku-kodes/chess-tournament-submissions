@@ -1,8 +1,30 @@
 import { writable } from 'svelte/store';
 import { playerService } from '../services/playerService.js';
+import { samplePlayers } from '../data/samplePlayers.js';
+
+const getInitialPlayers = () => {
+  if (typeof window === 'undefined') return samplePlayers;
+  
+  const saved = localStorage.getItem('chess_app_players');
+  if (saved) {
+    try {
+      const parsed = JSON.parse(saved);
+      if (parsed.length > 0) return parsed;
+    } catch (e) {
+      console.error('Error parsing players from localStorage', e);
+    }
+  }
+  
+  // Agar localStorage bilkul khali hai, toh sample data save karke return kar do
+  localStorage.setItem('chess_app_players', JSON.stringify(samplePlayers));
+  return samplePlayers;
+};
 
 function createPlayerStore() {
-  const { subscribe, set, update } = writable([]);
+   const initialPlayers = typeof window !== 'undefined' ? playerService.getAll() : [];
+    const { subscribe, set, update } = writable(initialPlayers);
+  
+  // const { subscribe, set, update } = writable(getInitialPlayers());
 
   return {
     subscribe,

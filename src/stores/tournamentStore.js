@@ -2,7 +2,11 @@ import { writable } from 'svelte/store';
 import { tournamentService } from '../services/tournamentService.js';
 
 function createTournamentStore() {
-  const { subscribe, set, update } = writable([]);
+
+   const initialTournaments = typeof window !== 'undefined' ? tournamentService.getAll() : [];
+    const { subscribe, set, update } = writable(initialTournaments);
+  
+  // const { subscribe, set, update } = writable([]);
 
   return {
     subscribe,
