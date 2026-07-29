@@ -434,7 +434,12 @@ Feel free to fork the repository and create a pull request.
 
 - 💼 Full Stack Developer
 - ⚙️ Go Backend Developer
-- 🤖 AI & Agentic AI Enthusiast
+- 🤖 AI & Agentic AI 
+
+Email: kaushlendrakumarverma46@gmail.com
+Phone no: 9511070782
+
+Project website link: https://chess-tournament-submissions.onrender.com
 
 GitHub: https://github.com/kuku-kodes
 
