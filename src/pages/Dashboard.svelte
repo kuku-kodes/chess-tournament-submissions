@@ -3,6 +3,7 @@
   import { tournamentStore } from '../stores/tournamentStore.js';
   import { matchStore } from '../stores/matchStore.js';
   import { activePage } from '../stores/uiStore.js';
+  import { push } from 'svelte-spa-router'
 
   $: totalPlayers = $playerStore.length;
   $: totalTournaments = $tournamentStore.length;
@@ -19,7 +20,7 @@
 
   <!-- Metric Statistics Grid -->
   <div class="stats-grid">
-    <button type="button" class="stat-card" on:click={() => activePage.set('players')}>
+    <button type="button" class="stat-card" on:click={() => push('/players')}>
       <div class="stat-icon">♟️</div>
       <div class="stat-info">
         <h3>Total Players</h3>
@@ -27,7 +28,7 @@
       </div>
     </button>
 
-    <button type="button" class="stat-card" on:click={() => activePage.set('tournaments')}>
+    <button type="button" class="stat-card" on:click={() => push('/tournaments')}>
       <div class="stat-icon">🏆</div>
       <div class="stat-info">
         <h3>Tournaments</h3>
@@ -35,7 +36,7 @@
       </div>
     </button>
 
-    <button type="button" class="stat-card" on:click={() => activePage.set('tournaments')}>
+    <button type="button" class="stat-card" on:click={() => push('/tournaments')}>
       <div class="stat-icon">⚡</div>
       <div class="stat-info">
         <h3>Active Tournaments</h3>
@@ -43,7 +44,7 @@
       </div>
     </button>
 
-     <button type="button" class="stat-card" on:click={() => activePage.set('tournaments')}>
+     <button type="button" class="stat-card" on:click={() => push('/tournaments')}>
       <div class="stat-icon">⚡</div>
       <div class="stat-info">
         <h3>Completed Tournaments</h3>
@@ -51,7 +52,7 @@
       </div>
     </button>
 
-    <button type="button" class="stat-card" on:click={() => activePage.set('matches')}>
+    <button type="button" class="stat-card" on:click={() => push('/matches')}>
       <div class="stat-icon">⚔️</div>
       <div class="stat-info">
         <h3>Total Matches</h3>
@@ -64,17 +65,17 @@
   <div class="quick-actions-section">
     <h3>Quick Navigation</h3>
     <div class="actions-grid">
-      <button class="action-card" on:click={() => activePage.set('players')}>
+      <button class="action-card" on:click={() => push('/players')}>
         <span class="action-title">Manage Players</span>
         <span class="action-desc">Add new players, check Elo ratings, and review participant lists.</span>
       </button>
 
-      <button class="action-card" on:click={() => activePage.set('tournaments')}>
+      <button class="action-card" on:click={() => push('/tournaments')}>
         <span class="action-title">Create Tournament</span>
         <span class="action-desc">Set up a new tournament event and assign players to brackets.</span>
       </button>
 
-      <button class="action-card" on:click={() => activePage.set('rankings')}>
+      <button class="action-card" on:click={() => push('/rankings')}>
         <span class="action-title">View Rankings & Podium</span>
         <span class="action-desc">Check out leaderboards and tournament podium winners.</span>
       </button>

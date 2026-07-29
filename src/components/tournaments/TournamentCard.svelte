@@ -1,9 +1,11 @@
 <script>
   export let tournament;
+  import { link, push } from 'svelte-spa-router'
   import { activeModal, selectedTournamentId, activePage } from '../../stores/uiStore.js';
   import { tournamentStore } from '../../stores/tournamentStore.js';
   import { matchStore } from '../../stores/matchStore.js';
   import { toast } from '../../stores/uiStore.js';
+   
 
   function openAssignModal() {
     activeModal.set({ type: 'assignPlayers', data: tournament });
@@ -14,7 +16,8 @@
       matchStore.generateMatches(tournament.id);
       toast.show('Matches generated successfully!', 'success');
       selectedTournamentId.set(tournament.id);
-      activePage.set('matches');
+      // activePage.set('matches');
+      push('/matches')
     } catch (err) {
       toast.show(err.message, 'error');
     }
@@ -22,12 +25,14 @@
 
   function viewMatches() {
     selectedTournamentId.set(tournament.id);
-    activePage.set('matches');
+    // activePage.set('matches');
+    push('/matches')
   }
 
   function viewRankings() {
     selectedTournamentId.set(tournament.id);
-    activePage.set('rankings');
+    // activePage.set('rankings');
+    push('/rankings')
   }
 </script>
 

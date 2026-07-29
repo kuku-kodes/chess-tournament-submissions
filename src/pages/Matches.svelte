@@ -8,11 +8,12 @@
 
   import { shufflePlayers } from '../utils/shufflePlayers.js';
   import MatchTable from '../components/matches/MatchTable.svelte';
+  import { push } from 'svelte-spa-router';
 
   // Default to selected tournament or first available tournament
   $: activeId = $selectedTournamentId || ($tournamentStore[0] ? $tournamentStore[0].id : null);
-  $: currentTournament = $tournamentStore.find((t) => t.id === activeId);
-  $: matches = activeId ? $matchStore.filter((m) => m.tournamentId === activeId) : [];
+  $: currentTournament = $tournamentStore.find(t => t.id === activeId);
+  $: matches = activeId ? $matchStore.filter(m => m.tournamentId === activeId) : [];
 //   $: matches = activeId ? matchService.getByTournament(activeId) : [];
 
   function getPlayerName(playerId) {
@@ -36,7 +37,8 @@
   function goToRankings() {
     if (activeId) {
       selectedTournamentId.set(activeId);
-      activePage.set('rankings');
+    //   activePage.set('rankings');
+      push('/rankings')
     }
   }
 </script>

@@ -1,8 +1,10 @@
 <script>
   import { activePage } from '../stores/uiStore.js';
+  import { push } from 'svelte-spa-router';
 
   function goHome() {
     activePage.set('dashboard');
+    push('/');
   }
 </script>
 

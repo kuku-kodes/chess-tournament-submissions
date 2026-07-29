@@ -20,7 +20,6 @@
     
     <main class="main-content">
       <div class="min-h-screen bg-gray-900 text-white p-4">
-        <!-- Sirf Router rahega, baki purane if-else hata diye hain -->
         <Router {routes} />
       </div>
     </main>
