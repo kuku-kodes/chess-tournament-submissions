@@ -7,7 +7,6 @@
 
 
   import { shufflePlayers } from '../utils/shufflePlayers.js';
-  import MatchTable from '../components/matches/MatchTable.svelte';
   import { push } from 'svelte-spa-router';
 
   // Default to selected tournament or first available tournament
